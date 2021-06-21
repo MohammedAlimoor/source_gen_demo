@@ -1,38 +1,31 @@
-import 'package:json_annotation/json_annotation.dart';
+import 'package:my_generators/src/annotations/FeatureFamcare.dart';
 
 part 'example.g.dart';
 
-const myStr = 'Lorem';
-final myInt = 12;
-final myDouble = 2.5;
-var myBool = false;
-final myList = [2];
-final myMap = {'a': 'b'};
-final mySet = {'a', 'b'}; // Set()..add('a')..add('b')
-final mySymbol = #g; // Symbol('g')
+@FeatureFamcare(label: 'AAAAA')
+abstract class Auth {
+  // final int id;
+  // final String name;
+  // final String price;
 
-void myFunc = () {
-  print('Hello world!!!');
-};
+  // const Auth(
+  //   this.id,
+  //   this.name,
+  //   this.price,
+  // );
 
-@JsonSerializable(nullable: false)
-class Order {
-  final int id;
-  final String name;
-  final String price;
 
-  const Order(
-    this.id,
-    this.name,
-    this.price,
-  );
+  @FCApi(url:'api/login')
+  Future<User> login(username,{String passord="123456"});
 
-  @override
-  String toString() => details();
 
-  @override
-  bool operator ==(Object other) => compare(other);
+  @FCApi(url:'api/login',header: {"ssss":"value"})
+  Future<User> reg(username,{String passord="123456"});
 
-  @override
-  int get hashCode => calculateHash();
+
+
+  Future<User> test(username,passord);
+}
+
+class User{
 }
