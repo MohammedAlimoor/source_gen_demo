@@ -1,1 +1,1 @@
-export 'src/example.dart';
+export 'src/auth.dart';

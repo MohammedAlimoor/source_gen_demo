@@ -6,8 +6,8 @@ class FeatureFamcare {
 
 class FCApi {
   final String url;
-  final Map<dynamic,dynamic> header;
+  final Map<dynamic, dynamic> header;
   final String method;
 
- const FCApi({this.url = '', this.header, this.method});
+  const FCApi({this.url = '', this.header, this.method});
 }
